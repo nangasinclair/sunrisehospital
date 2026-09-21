@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunrise Hospital</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <section id="navbar">
+    <div class="logo-container">
+      <img src="img/logo1.png" alt="Sunrise Logo" class="logo" height="100" width="100">
+      <span class="gradient-text">Sunrise Hospital</span>
+    </div>
+    <div class="nav-content">
+      <a href="#hero">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#booking" class="nav-cta">Book Appointment</a>
+    </div>
+  </section>
+
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Your Health, Our Priority</h1>
+      <p class="intro">Your Health is Our Priotity. Visit Us now for better healthcare Services</p>
+      <a href="#services" class="btn">Our Services</a>
+      <a href="#about" class="btn">About Us &rarr;</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-container">
+      <div class="description">
+        <h2><span>About Us</span></h2>
+      </div>
+
+      <div class="about-content">
+        <h2 class="cd">Who Are We</h2>
+        
+        <div class="card">
+          <img src="img/card.png" alt="Card diagnostic image">
+          <span>Sunrise Community Hospital is a non-profit organization that is leading in medical expertise and service provision, with deservedly earned recognition throughout East Africa and beyond as an advanced diagnostic, treatment and referral centre.</span>
+        </div>
+
+        <div class="card">
+          <img src="img/card1.png" alt="Card historical image">
+          <span>For more than 70 years, Sunrise Community Hospital has been delivering quality healthcare with compassion and excellence. We are committed to improving lives through advanced medical services, experienced healthcare professionals, and patient-centered care, making a difference in our community every day.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-container">
+      <div id="view-services" class="page-view">
+        <header>
+          <h1>Our Medical Services</h1>
+          <p class="intro">Comprehensive diagnostic, preventative, and emergency clinical domains.</p>
+        </header>
+        <ul class="services-list">
+          <li>General Consultation</li>
+          <li>Laboratory Services</li>
+          <li>Maternity Care</li>
+          <li>Pediatrics Department</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-container">
+      <div class="contact-section">
+        <h1>Get in Touch</h1>
+
+        <p class="intro">
+          Have a question, or need support? Use the quick links below to reach the right desk, or send us a message.
+        </p>
+
+        <p class="description">
+          Sunrise Community Hospital is a leading non-profit medical centre in East Africa, offering advanced diagnostics, treatment and coordinated care.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">👥</div>
+            <h3>General enquiries</h3>
+            <p>Questions about hospital services, visiting hours, directions and general information.</p>
+            <button>Select</button>
+          </div>
+
+          <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Medical enquiries</h3>
+            <p>Questions about appointments, treatment, specialists and medical support.</p>
+            <button>Select</button>
+          </div>
+
+          <div class="card">
+            <div class="icon">🎓</div>
+            <h3>School of Nursing</h3>
+            <p>Enquiries about nursing programs, admissions and training information.</p>
+            <button>Select</button>
+          </div>
+
+          <div class="card active">
+            <span class="check">✓</span>
+            <div class="icon">👥</div>
+            <h3>Job enquiries</h3>
+            <p>Questions about careers, vacancies, applications and hiring updates.</p>
+            <button>Select</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- APPOINTMENT FORM -->
+  <section id="booking">
+    <div class="section-container">
+      <div class="booking-section">
+        <h1>Book a Patient Appointment</h1>
+        <p class="intro">Please fill out the form below to secure your consultation slot with our medical specialists.</p>
+        
+        <form class="appointment-form" action="process.php" method="POST">
+          <div class="form-grid">
+            
+            <div class="form-group">
+              <label for="patient-name">Patient Name <span class="required">*</span></label>
+              <input type="text" id="patient-name" name="patient_name" placeholder="" required>
+            </div>
+
+            <div class="form-group">
+              <label for="national-id">National ID Number <span class="required">*</span></label>
+              <input type="text" id="national-id" name="national_id" placeholder="Enter ID Number" required>
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Gender <span class="required">*</span></label>
+              <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone_number" placeholder=" " required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email_address" placeholder="" required>
+            </div>
+
+            <div class="form-group">
+              <label for="department">Department <span class="required">*</span></label>
+              <select id="department" name="department" required>
+                <option value="" disabled selected>Select Medical Department</option>
+                <option value="general">General Consultation</option>
+                <option value="laboratory">Laboratory Services</option>
+                <option value="maternity">Maternity Care</option>
+                <option value="pediatrics">Pediatrics Department</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="appointment-date">Appointment Date <span class="required">*</span></label>
+              <input type="date" id="appointment-date" name="appointment_date" required>
+            </div>
+
+          </div>
+
+          <div class="form-actions">
+            <button type="reset" class="btn-secondary">Reset Form</button>
+            <button type="submit" class="btn-primary">Submit Booking</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo-text">Sunrise Hospital</span>
+        <p>Quality healthcare with compassion and excellence.</p>
+      </div>
+      <div class="footer-meta">
+        <p>&copy; 2026 Sunrise Community Hospital. All rights reserved.</p>
+        
+        
+          <a href="#">Facebook</a>
+          <a href="#">X (Twitter)</a>
+         
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
