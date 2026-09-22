@@ -1,0 +1,573 @@
+/* ==========================================
+   Sunrise Hospital - Professional Stylesheet
+   ========================================== */
+
+/* --- Design System Tokens --- */
+:root {
+    --primary-color: #0f4c81;    /* Deep Clinical Blue */
+    --accent-color: #0d6efd;     /* Trust Blue */
+    --teal-color: #198754;       /* Health Green */
+    --text-main: #4497c7;        /* Readable dark grey */
+    --text-muted: #5a626a;       /* Soft grey for body copy */
+    --bg-light: #f8f9fa;         /* Light background alternative */
+    --white: #ffffff;
+    --border-color: #e3e6ec;
+    --transition: all 0.3s ease;
+}
+
+/* --- Base Resets & Layout Setup --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth jumping between sections */
+    width: 100%;
+    overflow-x: hidden;      /* Prevents unwanted horizontal scroll track bars */
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    overflow-x: hidden;      /* Ensures zero micro-gaps on mobile views */
+}
+
+/* 
+   CRITICAL REFACTOR: 
+   Sections now expand 100% full-bleed out to screen edges.
+   Inner content handles content constraints safely.
+*/
+section {
+    padding: 5rem 2rem; 
+    width: 100%;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- Modern Header & Descriptions --- */
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.intro {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+/* --- 1. Sticky Navigation Bar --- */
+#navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    z-index: 1000;
+    width: 100%; /* Force bar flush across monitor side bezels */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 50px; /* Scaled down professionally */
+    width: auto;
+    object-fit: contain;
+}
+
+.gradient-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-content a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    margin-left: 1.5rem;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+}
+
+.nav-content a:hover {
+    color: var(--accent-color);
+}
+/* --- Special Navigation Button (Book Appointment) --- */
+.nav-content .nav-cta {
+    background-color: var(--teal-color);
+    color: var(--white) !important; /* Forces text to stay white over green */
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    margin-left: 2.5rem; /* Creates the explicit gap between Contact Us and this button */
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+/* Subtle hover state for a premium interactive feel */
+.nav-content .nav-cta:hover {
+    background-color: #6772e7; /* Slightly darker green on hover */
+    color: var(--white) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(25, 135, 84, 0.2);
+}
+
+/* --- 2. Hero Section --- */
+#hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    /* Removed border radius and margin-tops to allow an edge-to-edge wrap */
+    background: linear-gradient(rgba(178, 223, 217, 0.85), rgba(167, 181, 219, 0.85)), 
+                url('img/background.png') no-repeat center center/cover;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+.btn:first-of-type {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.btn:first-of-type:hover {
+    background-color: #0b5ed7;
+}
+
+.btn:last-of-type {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn:last-of-type:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* --- 3. About Us Section --- */
+#about {
+    background-color: var(--bg-light);
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cd {
+    grid-column: 1 / -1; /* Forces header text to cross full width */
+}
+
+#about .card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    border-top: 4px solid var(--accent-color);
+}
+.card img{
+    width: 200px;
+    height: 200px;
+    border: 2px solid white;
+    border-radius: 50px;
+    place-items: center;
+    display: block;
+    padding: 8px;
+    margin: 0 auto 15px auto;
+}
+
+/* --- 4. Services Section (Grid Blocks) --- */
+#services header {
+    margin-bottom: 3rem;
+}
+
+.services-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.services-list li {
+    background: var(--bg-light);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.services-list li:hover {
+    transform: translateY(-4px);
+    background-color: var(--white);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+/* ---  Contact Section Cards --- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+#contact .card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    transition: var(--transition);
+}
+
+#contact .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#contact .card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+#contact .card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+#contact button {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: var(--transition);
+}
+
+#contact .card:hover button {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-color: var(--accent-color);
+}
+
+/* --- Interactive Active State for Job Enquiries --- */
+#contact .card.active {
+    border-color: var(--teal-color);
+    background-color: #f0fdf4;
+}
+
+#contact .card.active button {
+    background-color: var(--teal-color);
+    color: var(--white);
+    border-color: var(--teal-color);
+}
+
+.check {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--teal-color);
+    color: var(--white);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* ---  Booking Form Architecture --- */
+#booking {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.appointment-form {
+    background-color: var(--bg-light);
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-top: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.form-group input, 
+.form-group select {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--white);
+    color: var(--text-main);
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+.required{
+  color: red;
+}
+
+/* Form Submission Actions Row */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.btn-primary, 
+.btn-secondary {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: #e2e6ea;
+    color: var(--text-main);
+}
+/* --- 7. Minimalist Footer Styling --- */
+#site-footer {
+    background-color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-brand {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1.5rem;
+}
+
+.footer-logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-socials a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.footer-socials a:hover {
+    color: var(--white);
+}
+.footer-credit {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.designer-name {
+    color: red;
+    text-decoration: underline;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.designer-name a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.designer-name a:hover {
+    color: red; /* Lightens up smoothly when hovered over */
+    text-decoration: underline;
+}
+
+
+
+/* Responsive Footer adjustments */
+@media (max-width: 768px) {
+    .footer-meta {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .footer-socials {
+        width: 100%;
+    }
+}
+
+/* Tablet & Mobile Adjustments */
+@media (max-width: 768px) {
+    .appointment-form {
+        padding: 1.5rem;
+    }
+    
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+    
+    .btn-primary, 
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================================
+   6. Responsive Layout Breakpoints
+   ========================================== */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .nav-content a {
+        margin: 0 0.5rem;
+    }
+
+    #hero {
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    section {
+        padding: 3rem 1.5rem;
+    }
+}
