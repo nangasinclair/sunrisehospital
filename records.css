@@ -1,0 +1,236 @@
+/* RECORDS PAGE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #0a4d8c;
+    --white: #ffffff;
+     --text-main: #333333;
+    --accent-color: #2563eb;
+    --teal-color: #198754;
+    --transition: all 0.3s ease;
+}
+
+#navbar {
+  position: sticky; top: 0; 
+  background-color: var(--white); 
+  padding: 1rem 2rem; display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  z-index: 1000; 
+  width: 100%; 
+    /* Force bar flush across monitor side bezels */
+  }
+    
+.logo-container {
+     display: flex; 
+     align-items: center; 
+     gap: 1rem; 
+    }
+
+.logo {
+  height: 50px; /* Scaled down professionally */ 
+     width: auto; object-fit: contain;
+     } 
+     
+.gradient-text { 
+      font-size: 1.4rem; 
+      font-weight: 700;
+       color: var(--primary-color); 
+      } 
+      
+.nav-content a {
+       text-decoration: none;
+       color: var(--text-main);
+        font-weight: 600; margin-left: 1.5rem; 
+        padding: 0.5rem 0; transition: var(--transition);
+   } 
+   
+.nav-content a:hover { 
+    color: var(--accent-color);
+   } 
+
+   /* --- Special Navigation Button (Book Appointment) --- */ 
+.nav-content .nav-cta {
+   background-color: var(--teal-color); color: var(--white) !important; /* Forces text to stay white over green */
+   padding: 0.6rem 1.2rem; border-radius: 4px; margin-left: 2.5rem; /* Creates the explicit gap between Contact Us and this button */ 
+   font-weight: 700; transition: var(--transition);
+   } 
+   
+   /* Subtle hover state for a premium interactive feel */ 
+.nav-content .nav-cta:hover { background-color: #146c43; /* Slightly darker green on hover */ color: var(--white) !important;
+   transform: translateY(-1px); box-shadow: 0 4px 8px rgba(25, 135, 84, 0.2); }
+
+.records-section {
+    padding: 60px 8%;
+    background: linear-gradient(to right, #f7fbff, #eef7ff);
+    min-height: 100vh;
+}
+
+.records-section h1 {
+    text-align: center;
+    color: #0a4d8c;
+    margin-bottom: 10px;
+}
+
+.intro {
+    text-align: center;
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.search-form input {
+    width: 350px;
+    padding: 12px;
+    border: 2px solid #0a4d8c;
+    border-radius: 8px;
+    outline: none;
+}
+
+.search-form button {
+    padding: 12px 20px;
+    background: #0a4d8c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: #06345e;
+}
+
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background: #0a4d8c;
+    color: white;
+    padding: 15px;
+}
+
+table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+    background: #f3f8ff;
+}
+
+.delete-btn {
+    background: crimson;
+    color: white;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.delete-btn:hover {
+    background: darkred;
+}
+
+/* --- 7. Minimalist Footer Styling --- */
+#site-footer {
+    background-color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-brand {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1.5rem;
+}
+
+.footer-logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-socials a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.footer-socials a:hover {
+    color: var(--white);
+}
+.footer-credit {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.designer-name {
+    color: red;
+    text-decoration: underline;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.designer-name a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.designer-name a:hover {
+    color: red; /* Lightens up smoothly when hovered over */
+    text-decoration: underline;
+}
